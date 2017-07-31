@@ -8,6 +8,11 @@ class PunchinController < ApplicationController
 	end
 
 	def new
+		@punchin = Punchin.new
+	end
+
+	def edit
+		@punchin = Punchin.find(params[:id])
 	end
 
 	def create
@@ -15,6 +20,23 @@ class PunchinController < ApplicationController
 
 		@punchin.save
 		redirect_to @punchin
+	end
+
+	def update
+		@punchin = Punchin.find(params[:id])
+
+		if @punchin.update(punchin_params)
+			redirect_to @punchin
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@punchin = Punchin.find(params[:id])
+		@punchin.destroy
+
+		redirect_to punchin_index_path
 	end
 
 	private

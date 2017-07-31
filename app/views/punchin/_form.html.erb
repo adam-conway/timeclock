@@ -1,0 +1,15 @@
+<%= form_for :punchin, url: punchin_index_path do |f| %>
+	<p>
+		<%= f.select(:client) do %>
+    		<% [['Lauren'], ['Mariah']].each do |c| -%>
+      			<%= content_tag(:option, c.first, value: c.first) %>
+    	<% end %>
+  	<% end %>
+  	</p>
+	
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

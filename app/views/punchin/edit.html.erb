@@ -1,0 +1,17 @@
+<h1>Edit punchin</h1>
+<!--
+<%= form_for(@punchin) do |f| %>
+	<p>
+		<%= f.select(:client) do %>
+    	<% [['Lauren'], ['Mariah']].each do |c| -%>
+      	<%= content_tag(:option, c.first, value: c.first) %>
+    	<% end %>
+  	<% end %>
+	</p>
+-->
+
+	<%= render 'form' %>
+
+<% end %>
+
+<%= link_to 'Back', punchin_index_path %>

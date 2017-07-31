@@ -1,0 +1,18 @@
+<h1>Listing all the punch ins/punch outs</h1>
+
+<%= link_to 'New punch in', new_punchin_path %>
+<table>
+	<tr>
+		<th>Client</th>
+		<th>Time</th>
+	</tr>
+
+	<% @punchin.each do |punchin| %>
+		<tr>
+			<td><%= punchin.client %></td>
+			<!--<td><%= punchin.time %></td>-->
+			<td><%= punchin.created_at.in_time_zone("Pacific Time (US & Canada)") %></td>
+			<td><%= link_to 'Show', punchin_path(punchin) %></td>
+		</tr>
+	<% end %>
+</table>

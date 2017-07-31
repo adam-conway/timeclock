@@ -1,0 +1,11 @@
+<p>
+	<strong>Client:</strong>
+	<%= @punchin.client %>
+</p>
+
+<p>
+	<strong>Time:</strong>
+	<%= @punchin.created_at.in_time_zone("Pacific Time (US & Canada)") %>
+</p>
+
+<%= link_to 'Back', punchin_index_path %>

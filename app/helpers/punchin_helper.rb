@@ -1,0 +1,2 @@
+module PunchinHelper
+end

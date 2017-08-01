@@ -1,0 +1,21 @@
+<h1>Let's add a new client!</h1>
+
+<%= form_for :client, url: clients_path do |f| %>
+
+<p>
+	<%= f.label :client_name %><br>
+	<%= f.text_area :client_name %>
+</p>
+
+<p>
+	<%= f.label :client_rate %><br>
+	<%= f.text_area :client_rate %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Back', clients_path%>

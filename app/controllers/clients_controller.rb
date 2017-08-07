@@ -10,6 +10,10 @@ class ClientsController < ApplicationController
 	def new
 	end
 
+	def list_of_client_names
+		@client_array = [client.client_name.each]
+	end
+
 	def create
 		@client = Client.new(client_params)
 
@@ -21,6 +25,5 @@ class ClientsController < ApplicationController
 		def client_params
 			params.require(:client).permit(:client_name, :client_rate)
 		end
-
 
 end

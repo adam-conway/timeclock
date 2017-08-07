@@ -1,22 +1,5 @@
 <h1> Punch in or Punch out </h1>
-<!--<p>
-<%= form_for :punchin, url: punchin_index_path do |f| %>
-  <%= f.select(:client) do %>
-    <% [['Lauren'], ['Mariah']].each do |c| -%>
-      <%= content_tag(:option, c.first, value: c.first) %>
-    <% end %>
-  <% end %>
-  
-    <%= f.label :time %><br>
-    <%= f.text_area :time %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
--->
 
 <%= render 'form' %>
 
-<%= link_to 'Back', punchin_index_path%>
+<%= link_to 'Back', punchin_index_path %>

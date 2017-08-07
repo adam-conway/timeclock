@@ -1,6 +1,8 @@
 class PunchinController < ApplicationController
+	
 	def index
 		@punchin = Punchin.all
+		@list_of_clients = Client.select("DISTINCT client_name").to_a
 	end
 
 	def show
@@ -9,10 +11,12 @@ class PunchinController < ApplicationController
 
 	def new
 		@punchin = Punchin.new
+		@list_of_clients = Client.select("DISTINCT client_name").to_a
 	end
 
 	def edit
 		@punchin = Punchin.find(params[:id])
+		@list_of_clients = Client.select("DISTINCT client_name").to_a
 	end
 
 	def create

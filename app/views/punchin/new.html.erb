@@ -3,3 +3,11 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', punchin_index_path %>
+
+<% @punchin_list.each do |punchin| %>
+	<tr>
+		<td><%= punchin.working %></td>
+	</tr>
+<% end %>
+
+<%= @asdf %>

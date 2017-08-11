@@ -3,10 +3,13 @@
 <%= link_to 'Home', root_path %><br>
 <%= link_to 'New punch in', new_punchin_path %><br>
 
+<%= @first_punch %>
+
 <table>
 	<tr>
 		<th>Client</th>
 		<th>Time</th>
+		<th>Working?</th>
 	</tr>
 
 	<% @punchin.each do |punchin| %>
@@ -14,6 +17,7 @@
 			<td><%= punchin.client %></td>
 			<!--<td><%= punchin.time %></td>-->
 			<td><%= punchin.created_at.in_time_zone("Pacific Time (US & Canada)") %></td>
+			<td><%= punchin.working %></td>
 			<td><%= link_to 'Show', punchin_path(punchin) %></td>
 			<td><%= link_to 'Edit', edit_punchin_path(punchin) %></td>
 			<td><%= link_to 'Destroy', punchin_path(punchin),

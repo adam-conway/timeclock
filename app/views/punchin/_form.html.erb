@@ -1,8 +1,13 @@
+<p>Client name</p>
 <%= form_for :punchin, url: punchin_index_path do |f| %>
   <%= f.select(:client) do %>
     <% @list_of_clients.each do |c| -%>
       <%= content_tag(:option, c.client_name, value: c.client_name) %>
     <% end %>
+  <% end %>
+
+<p>Clocking in?</p>
+  <%= f.select(:working) do %>
   <% end %>
   
   <p>
